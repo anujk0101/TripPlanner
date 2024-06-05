@@ -21,7 +21,7 @@ class StateName
 {
   List<Map<String, dynamic>> stateDetails=[
     {
-  'sName' : 'Adhra Pradesh',
+  'sName' : 'Andhra Pradesh',
   'img' : 'https://assets-news.housing.com/news/wp-content/uploads/2022/08/18071328/Andhra-Pradesh-3.png',
     /*'p1' : 'Araku Valley',
       'p2' :'Visakhapatnam',
@@ -363,6 +363,112 @@ class StateBestPlaceData
       '10' : 'Umananda Island', 'img10' : 'https://www.holidify.com/images/cmsuploads/compressed/attr_8149_20190226130826jpg',
       '11' : 'Jorhat', 'img11' : 'https://www.holidify.com/images/bgImages/VIJAYAWADA.jpg',
       '12' : 'Barpeta', 'img12' : 'https://www.holidify.com/images/bgImages/ANANTAPUR.jpg',
+    },
+  ];
+}
+
+class Restrurant
+{
+  List<Map<String, dynamic>> restDetails=[{
+    "name" : "Take It Cheesy",
+    "img" : "https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg",
+  },
+    {
+      "name" : "Wingman’s Pub",
+      "img" : "https://www.touchbistro.com/wp-content/uploads/2021/08/restaurant-interior-design-ideas-thumbnail.jpg",
+    },
+    {
+      "name" : "Lettuce Eat Bistro",
+      "img" : "https://assets.architecturaldigest.in/photos/64f85037ec0bc118bdd98aba/master/pass/Untitled%20design%20(14).png",
+    },
+    {
+      "name" : "Haute Dog Diner",
+      "img" : "https://img.freepik.com/free-photo/happy-waiter-serving-food-group-cheerful-friends-pub_637285-12525.jpg",
+    },
+    {
+      "name" : "Basic B Burgers",
+      "img" : "https://5.imimg.com/data5/SELLER/Default/2022/12/DB/GT/PR/14177800/fast-food-restaurant-interior-designer.jpg",
+    },
+    {
+      "name" : "Sauvage",
+      "img" : "https://www.jaquar.com/images/thumbs/0049451_Jaquar%20Lighting%20Thumbnail%20Ideas%20For%20Indian%20restaurants%20-%20October.png",
+    },
+    {
+      "name" : "The Nouveau Table",
+      "img" : "https://t3.ftcdn.net/jpg/03/11/19/38/360_F_311193887_0aXFwwXXHu4PsBAVNW1USeypg1clOH8E.jpg",
+    },
+    {
+      "name" : "Fauna Kitchen",
+      "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPKCCKPb0GunF21Sqd3U8tjXYWIr31vzsvQ&s",
+    },
+    ];
+}
+
+class Items
+{
+  List<Map<String, dynamic>> itemsDetail = [
+    {
+      "item" :"Pizza",
+      "img" : "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*"
+    },
+    {
+      "item": "Rolls",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRenzTO0K0W-FQnmW2rhh7YtRe6OrLe34Z1Iw&s"
+    },
+    {
+      "item": "Ice Cream",
+      "img": "https://media.gettyimages.com/id/157472912/photo/ice-cream-composition-on-a-bowl.jpg?s=612x612&w=gi&k=20&c=AniWX1OhaarUxCkgjUoKiA3bKVllK0upCylW6Z0PCMQ="
+    },
+    {
+      "item": "Paratha",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Aloo_Paratha_also_known_as_Batatay_Jo_Phulko.jpg/800px-Aloo_Paratha_also_known_as_Batatay_Jo_Phulko.jpg"
+    },
+    {
+      "item": "Noodles",
+      "img": "https://shwetainthekitchen.com/wp-content/uploads/2023/03/vegetable-noodles.jpg"
+    },
+    {
+      "item": "Sandwich",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbO0pWgOAIMcF89AEutxg822W74k6Jx8Hnw&s"
+    },
+
+  ];
+}
+
+class Explore
+{
+  List<Map<String,dynamic>> exploreRest=[
+    {
+      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d0450ce1a6ba19ea60cd724471ed54a8",
+      "name" :"Domino's Pizza",
+      "detail" : "Pizzas, Italian, Pastas, Desserts",
+      "Location" : "Sakchi . 1.8km",
+      "offer1" : "20% OFF",
+      "offer2" : "UPTO 50"
+    },
+    {
+      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/skfbhz264euhvsoayprt",
+      "name" :"Pastas By Pizza Hut",
+      "detail" : "Pastas",
+      "Location" : "Sakchi . 3.0km",
+      "offer1" : "40% OFF",
+      "offer2" : "UPTO 20"
+    },
+    {
+      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/z0c4xpovma1qtmu4tlls",
+      "name" :"Pizza Hut",
+      "detail" : "Pizzas",
+      "Location" : "Sakchi . 4.1km",
+      "offer1" : "30% OFF",
+      "offer2" : "UPTO 80"
+    },
+    {
+      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/91a1a3aa8fd2c03443bedad1f8041e20",
+      "name" :"Briyani By Kilo",
+      "detail" : "Hyderabadi Briyani",
+      "Location" : "Sakchi . 5.6km",
+      "offer1" : "30% OFF",
+      "offer2" : "UPTO 100"
     },
   ];
 }

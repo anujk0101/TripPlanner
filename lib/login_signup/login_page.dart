@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:find_tour/login_signup/signup_page.dart';
 import 'package:find_tour/widgets/widget_design.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../home_page/first_page.dart';
 import '../home_page/home_page.dart';
 import '../splash/splash.dart';
 import 'package:find_tour/login_signup/forgot_password.dart';
@@ -21,8 +23,23 @@ class LoginPage extends StatelessWidget
   }
 }
 
-class LoginBody extends StatelessWidget
+class LoginBody extends StatefulWidget {
+  static const String logedInRecordCheck="IsLoggedIn";
+  const LoginBody({super.key});
+
+  @override
+  State<LoginBody> createState() => _LoginBodyState();
+}
+
+class _LoginBodyState extends State<LoginBody>
 {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+
   int flag=0;
   TextEditingController teEmailController=TextEditingController();
   TextEditingController tePassController=TextEditingController();
@@ -33,7 +50,7 @@ class LoginBody extends StatelessWidget
       padding: EdgeInsets.only(left: 20,right: 20),
       child: SingleChildScrollView(
         child: Column(
-         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text("Login",style: TextStyle(color: Colors.white,fontSize: 32),),
             SizedBox(height: 20,),
@@ -49,24 +66,12 @@ class LoginBody extends StatelessWidget
                 children: [
                   InkWell(
                     child: button(clr: Colors.red,btnText: "Sign In"),
-                    onTap: (){
-
-                      /*AllData al = AllData();
-                      if(teEmailController.text.toString() != "" && tePassController.text.toString()!="") {
-                        for(var i = 0;i< al.dataLoginDetails.length;i++){
-                          var element = al.dataLoginDetails[i];
-                          print(al.dataLoginDetails);
-                          print("length ${al.dataLoginDetails.length}");
-                          print(element['userId']);
-                          print(element['password']);
-                          if(teEmailController.text.toString()==element['userId'] && tePassController.text.toString() ==element['password'])
-                        {
-                          Navigator.push(context,MaterialPageRoute(builder: (_) => SplashSc()));
-                        }
-                        }*/
-                     if((teEmailController.text.toString().toLowerCase()=="anujkeshri10@gmail.com" || teEmailController.text.toString()=="9472788783") && tePassController.text.toString().toLowerCase()=="flutter")
+                    onTap: () async {
+                      if((teEmailController.text.toString().toLowerCase()=="anujkeshri10@gmail.com" || teEmailController.text.toString()=="9472788783") && tePassController.text.toString().toLowerCase()=="flutter")
                       {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>HomePage()));
+                        var prefs=await SharedPreferences.getInstance();
+                        prefs.setBool(LoginBody.logedInRecordCheck, true);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>FirstPage()));
                       }
                       else{
                         flag=1;
@@ -84,11 +89,11 @@ class LoginBody extends StatelessWidget
             SizedBox(height: 20,),
             InkWell(child: button(btnText: "Sign Up",clr: Colors.white24),
               onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUp()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUp()));
               },),
             SizedBox(height: 20,),
             InkWell(onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPassword()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPassword()));
             },
                 child: Text("Forgot Password",style: TextStyle(color: Colors.white,fontSize: 20,),))
 
@@ -108,13 +113,15 @@ class LoginBody extends StatelessWidget
       child: Text(btnText!,style: TextStyle(fontSize: 31,color: Colors.white),),
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          //border: Border.all(color: clr!),
-          color: clr,
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        //border: Border.all(color: clr!),
+        color: clr,
       ),
     );
   }
 }
+
+
 
 
 

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:find_tour/login_signup/login_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../home_page/first_page.dart';
 
@@ -14,16 +15,30 @@ class SplashSc extends StatefulWidget
 }
 
 class _SplashScState extends State<StatefulWidget>{
+  bool? check;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     //Timer(Duration(seconds: 4),())
-    Timer(Duration(seconds: 4),() {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-      return FirstPage();
-      }));
+    Timer(Duration(seconds: 4),() async {
+
+      var prefs=await SharedPreferences.getInstance();
+       check=prefs.getBool(LoginBody.logedInRecordCheck);
+      goToPage();
     },);
+  }
+
+  void goToPage()
+  {
+    if(check==null || check==false)
+      {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return LoginPage();}));
+      }
+    else
+      {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return FirstPage();}));
+      }
   }
 
   @override
@@ -38,3 +53,4 @@ class _SplashScState extends State<StatefulWidget>{
   }
 
 }
+

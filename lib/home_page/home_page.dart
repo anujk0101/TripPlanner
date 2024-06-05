@@ -1,15 +1,30 @@
 import 'package:find_tour/data.dart';
 import 'package:find_tour/home_page/description.dart';
 import 'package:find_tour/home_page/state_popular_place.dart';
+import 'package:find_tour/login_signup/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("MakeMyPlan"),
+      appBar: AppBar(title: Text("FabIndia"),
+       actions: [
+         Padding(
+           padding: const EdgeInsets.only(right: 8.0),
+           child: InkWell(
+               onTap: () async{
+                 var prefs=await SharedPreferences.getInstance();
+                 prefs.setBool(LoginBody.logedInRecordCheck, false);
+                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage(),));
+               },
+               child: Icon(Icons.logout)),
+               //Text("Logout",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+         )
+       ],
        // backgroundColor: Colors.black.withOpacity(0.5),
         //leading: CircleAvatar(backgroundImage: NetworkImage('https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg'),),
     ),
