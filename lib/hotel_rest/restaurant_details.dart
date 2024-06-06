@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../data.dart';
+import 'menu.dart';
 
 class RestaurantDetails extends StatelessWidget
 {
@@ -51,10 +52,15 @@ class _RestaurantDetailsBodyState extends State<RestaurantDetailsBody> {
                 itemBuilder: (_,index){
               return Column(
                 children: [
-                  Container(
-                    padding: EdgeInsets.only(right: 12),
-                    width: 160,height: 160,
-                    child: Image.network(rst.restDetails[index]['img'],fit: BoxFit.fill,),
+                  InkWell(
+                    child: Container(
+                      padding: EdgeInsets.only(right: 12),
+                      width: 160,height: 160,
+                      child: Image.asset(rst.restDetails[index]['img'],fit: BoxFit.fill,),
+                    ),
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu(),));
+                    },
                   ),
                   Text(rst.restDetails[index]['name'],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21),)
                 ],
@@ -71,20 +77,26 @@ class _RestaurantDetailsBodyState extends State<RestaurantDetailsBody> {
                 scrollDirection: Axis.horizontal,
                 itemCount: itm.itemsDetail.length,
                 itemBuilder: (_,index){
-                  return Container(
-                        padding: EdgeInsets.only(right: 12),
-                        //width: 160,height: 160,
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: NetworkImage(itm.itemsDetail[index]["img"],),
-                              maxRadius: 30,
-                            ),
-                            Text(itm.itemsDetail[index]['item'],),
-                          ],
-                        )
-                      //Image.network(rst.restDetails[index]['img'],fit: BoxFit.fill,),
-                    );
+                  return InkWell(
+                    child: Container(
+                          padding: EdgeInsets.only(right: 12),
+                          //width: 160,height: 160,
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: NetworkImage(itm.itemsDetail[index]["img"],),
+                                maxRadius: 30,
+                              ),
+                              Text(itm.itemsDetail[index]['item'],),
+                            ],
+                          )
+                        //Image.network(rst.restDetails[index]['img'],fit: BoxFit.fill,),
+                      ),
+                    onTap: ()
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu(),));
+                    },
+                  );
                 }),
           ),
           SizedBox(height: 2,),
@@ -105,22 +117,28 @@ class _RestaurantDetailsBodyState extends State<RestaurantDetailsBody> {
                     child: Stack(
                       alignment: Alignment.bottomLeft,
                       children: [
-                        Image(image: NetworkImage(explore.exploreRest[index]["img"]),fit:BoxFit.fill,height: 180,),
+                        Image(image: AssetImage(explore.exploreRest[index]["img"]),fit:BoxFit.fill,height: 180,),
                         Positioned(child: Text(explore.exploreRest[index]["offer1"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 21),),bottom: 30,),
                         Positioned(child: Text(explore.exploreRest[index]["offer2"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 21),),bottom: 10,)
                       ],
                     ),
                   ),
                   SizedBox(width: 10,),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(explore.exploreRest[index]["name"],style: TextStyle(fontSize: 21),),
-                      Text(explore.exploreRest[index]["detail"]),
-                      Text(explore.exploreRest[index]["Location"]),
-                    ],
+                  InkWell(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(explore.exploreRest[index]["name"],style: TextStyle(fontSize: 21),),
+                        Text(explore.exploreRest[index]["detail"]),
+                        Text(explore.exploreRest[index]["Location"]),
+                      ],
+                    ),
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu(),));
+                    },
                   ),
+
                 ],
               );
           })

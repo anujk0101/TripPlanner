@@ -371,35 +371,35 @@ class Restrurant
 {
   List<Map<String, dynamic>> restDetails=[{
     "name" : "Take It Cheesy",
-    "img" : "https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg",
+    "img" : "asset/restaurant/rest_chizzy.avif",
   },
     {
       "name" : "Wingman’s Pub",
-      "img" : "https://www.touchbistro.com/wp-content/uploads/2021/08/restaurant-interior-design-ideas-thumbnail.jpg",
+      "img" : "asset/restaurant/rest_Wingman’s Pub.jpeg",
     },
     {
       "name" : "Lettuce Eat Bistro",
-      "img" : "https://assets.architecturaldigest.in/photos/64f85037ec0bc118bdd98aba/master/pass/Untitled%20design%20(14).png",
+      "img" : "asset/restaurant/rest_Lettuce Eat Bistro.jpeg",
     },
     {
       "name" : "Haute Dog Diner",
-      "img" : "https://img.freepik.com/free-photo/happy-waiter-serving-food-group-cheerful-friends-pub_637285-12525.jpg",
+      "img" : "asset/restaurant/rest_Haute Dog Diner.avif",
     },
     {
       "name" : "Basic B Burgers",
-      "img" : "https://5.imimg.com/data5/SELLER/Default/2022/12/DB/GT/PR/14177800/fast-food-restaurant-interior-designer.jpg",
+      "img" : "asset/restaurant/rest_Basic B Burgers.jpeg",
     },
     {
       "name" : "Sauvage",
-      "img" : "https://www.jaquar.com/images/thumbs/0049451_Jaquar%20Lighting%20Thumbnail%20Ideas%20For%20Indian%20restaurants%20-%20October.png",
+      "img" : "asset/restaurant/rest_Sauvage.png",
     },
     {
       "name" : "The Nouveau Table",
-      "img" : "https://t3.ftcdn.net/jpg/03/11/19/38/360_F_311193887_0aXFwwXXHu4PsBAVNW1USeypg1clOH8E.jpg",
+      "img" : "asset/restaurant/rest_The Nouveau Table.jpeg",
     },
     {
       "name" : "Fauna Kitchen",
-      "img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPKCCKPb0GunF21Sqd3U8tjXYWIr31vzsvQ&s",
+      "img" : "asset/restaurant/rest_Fauna Kitchen.jpeg",
     },
     ];
 }
@@ -439,7 +439,7 @@ class Explore
 {
   List<Map<String,dynamic>> exploreRest=[
     {
-      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d0450ce1a6ba19ea60cd724471ed54a8",
+      "img" : "asset/explore_restaurant/pizza.jpeg",
       "name" :"Domino's Pizza",
       "detail" : "Pizzas, Italian, Pastas, Desserts",
       "Location" : "Sakchi . 1.8km",
@@ -447,7 +447,7 @@ class Explore
       "offer2" : "UPTO 50"
     },
     {
-      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/skfbhz264euhvsoayprt",
+      "img" : "asset/explore_restaurant/pasta.jpg",
       "name" :"Pastas By Pizza Hut",
       "detail" : "Pastas",
       "Location" : "Sakchi . 3.0km",
@@ -455,7 +455,7 @@ class Explore
       "offer2" : "UPTO 20"
     },
     {
-      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/z0c4xpovma1qtmu4tlls",
+      "img" : "asset/explore_restaurant/pizza hut.jpeg",
       "name" :"Pizza Hut",
       "detail" : "Pizzas",
       "Location" : "Sakchi . 4.1km",
@@ -463,12 +463,90 @@ class Explore
       "offer2" : "UPTO 80"
     },
     {
-      "img" : "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/91a1a3aa8fd2c03443bedad1f8041e20",
+      "img" : "asset/explore_restaurant/biryani-by-kilo.avif",
       "name" :"Briyani By Kilo",
       "detail" : "Hyderabadi Briyani",
       "Location" : "Sakchi . 5.6km",
       "offer1" : "30% OFF",
       "offer2" : "UPTO 100"
     },
+  ];
+}
+
+class Hotels
+{
+  List<Map<String,dynamic>> roomsDetails=[
+    {
+      "img" : "asset/rooms/room1.avif",
+      "name" : "Chandra Residency",
+      "price" : 1000,
+      "tax" : 180
+    },
+    {
+      "img" : "asset/rooms/room2.avif",
+      "name" : "Townhouse OAK",
+      "price" : 1500,
+      "tax" : 270
+    },
+    {
+      "img" : "asset/rooms/room3.avif",
+      "name" : "Hotel Queens",
+      "price" : 1300,
+      "tax" : 234
+    },
+    {
+      "img" : "asset/rooms/room4.webp",
+      "name" : "Ginger",
+      "price" : 3000,
+      "tax" : 540
+    },
+    {
+      "img" : "asset/rooms/room5.webp",
+      "name" : "ITC",
+      "price" : 10000,
+      "tax" : 1800
+    },
+  ];
+}
+
+class Menus
+{
+  List<Map<String,dynamic>> menusDetails=[
+    {
+      "item" : "Lachha paratha",
+      "price" :50,
+      "type" : "veg",
+      "img" : "asset/menu/laccha_paratha.avif",
+      "desc" : "Pieces of indian cottage cheese simmered and cooked in beautiful and smooth spinach gravy with spices."
+    },
+    {
+      "item" : "Chicken 2 pc & rice",
+      "price" : 150,
+      "type" : "non veg",
+      "img" : "asset/menu/Chicken_2_pc_rice.avif",
+      "desc" : "Pure chicken made with home made spices and serve with roti or rice"
+    },
+    {
+      "item" : "Steam rice half plate",
+      "price" : 30,
+      "type" : "veg",
+      "img" : "asset/menu/Steam rice half plate.avif",
+      "desc" : "Stem plain rice"
+    },
+    {
+      "item" : "Mutton masala full",
+      "price" : 250,
+      "type" : "non veg",
+      "img" : "asset/menu/Mutton masala full.avif",
+      "desc" : "A flavorful and succulent mutton dish that tantalizes your taste buds with its rich, aromatic gravy."
+    },
+    {
+      "item" : "Handi Mutton",
+      "price" : 650,
+      "type" : "non veg",
+      "img" : "asset/menu/Handi Mutton.avif",
+      "desc" : "Pieces of indian cottage cheese simmered and cooked in beautiful and smooth spinach gravy with spices."
+    },
+
   ];
 }

@@ -91,20 +91,18 @@ class HomePageBody extends StatelessWidget
                 mainAxisSpacing: 10
           ),
               itemBuilder: (_,index){
-            return Container(
-              child: InkWell(
-                child: Stack(
-                  children: [
-                    Container(
-                       // height: 100,
-                        child: Image.network(fpl.famousPlace[index]['imgP'],fit: BoxFit.fill,height: double.infinity,)),
-                    Align(alignment: Alignment.bottomCenter,child: Text(fpl.famousPlace[index]['fName'],style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),))
-                  ],
+            return InkWell(
+              child: Stack(
+                children: [
+                  Container(
+                     // height: 100,
+                      child: Image.network(fpl.famousPlace[index]['imgP'],fit: BoxFit.fill,height: double.infinity,)),
+                  Align(alignment: Alignment.bottomCenter,child: Text(fpl.famousPlace[index]['fName'],style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),))
+                ],
 
-                ),onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Description(index: index,)));
-              },
-              ),
+              ),onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Description(index: index,)));
+            },
             );
               })
         ],

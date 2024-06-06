@@ -12,7 +12,7 @@ class FirstPage extends StatelessWidget
       child: Scaffold(
         body: Column(
           children: [
-            Image(image: NetworkImage("https://tripnxt.com/blog/wp-content/uploads/2020/05/india-map-tn.jpg")),
+            Image(image: NetworkImage("https://lh5.googleusercontent.com/p/AF1QipNaQ1SZnIKTduoRA8gG4NgMV3wNmn36Xnji2Oro=w1080-h624-n-k-no")),
             SizedBox(height: 15,),
 Text("India",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
             SizedBox(height: 15,),

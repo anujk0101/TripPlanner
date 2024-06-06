@@ -52,6 +52,37 @@ class StateBestPlaceBody extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text("Best Restaurant in ${stateName}", style: TextStyle(fontSize: 22, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
+          SizedBox(height: 15,),
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: rest.restDetails.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_,index){
+                  return Container(
+                    width: 210,
+                    child: Column(
+                      //crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Container(
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius:BorderRadius.circular(10),
+                            ),
+                            //padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(rest.restDetails[index]["img"],fit: BoxFit.fill,),
+                          ),
+                        ),
+                        Text(rest.restDetails[index]["name"],style: TextStyle(fontSize: 24),),
+                      ],
+                    ),
+                  );
+                }),
+          ),
          Text("Top 12 place in ${stateName}", style: TextStyle(fontSize: 22, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
           ListView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -64,37 +95,7 @@ class StateBestPlaceBody extends StatelessWidget
             );
           }),
           SizedBox(height: 15,),
-          Text("Best Restaurant in ${stateName}", style: TextStyle(fontSize: 22, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
-          SizedBox(height: 15,),
-          SizedBox(
-            height: 200,
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: rest.restDetails.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_,index){
-              return Container(
-                width: 210,
-                child: Column(
-                  //crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Container(
-                        height: 150,
-                        decoration: BoxDecoration(
-                            borderRadius:BorderRadius.circular(10),
-                        ),
-                        //padding: const EdgeInsets.all(8.0),
-                        child: Image.network(rest.restDetails[index]["img"],fit: BoxFit.fill,),
-                      ),
-                    ),
-                    Text(rest.restDetails[index]["name"],style: TextStyle(fontSize: 24),),
-                  ],
-                ),
-              );
-            }),
-          ),
+
           SizedBox(height: 50,)
         ],
       ),
